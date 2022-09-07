@@ -1,8 +1,8 @@
-# VORP vorp_DeliveryJob!
+# vorp_DeliveryJob
 
 ## 1. Requirements
 
-- [VORP-Core](https://github.com/VORPCORE/VORP-Core)
+- [VORP-Core](https://github.com/VORPCORE/vorp-core-lua)
 
 ## 2. Installation
 
