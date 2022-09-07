@@ -6,4 +6,7 @@ Locales['en'] = {
     ['and'] = ' gold and ',
     ['delivery_point'] = 'The drop off point is near the %s',
     ['blip'] = 'Deliveryjob',
+    ['DeliverPrompt'] = 'Start delivery job',
+    ['EndDeliverPrompt'] = 'Deliver Delivery',
+    ['intime'] = 'Place of delivery reached on time',
 }

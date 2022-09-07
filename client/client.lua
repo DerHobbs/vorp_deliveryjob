@@ -21,7 +21,7 @@ local pressed = false
 local inStartArea = false
 
 function SetupDeliverPrompt()
-	local str = 'Start delivery job'
+	local str = _U('DeliverPrompt')
 	DeliverPrompt = PromptRegisterBegin()
 	PromptSetControlAction(DeliverPrompt, 0xE8342FF2)
 	str = CreateVarString(10, 'LITERAL_STRING', str)
@@ -33,7 +33,7 @@ function SetupDeliverPrompt()
 end
 
 function SetupEndDeliverPrompt()
-	local str = "deliver delivery"
+	local str = _U('EndDeliverPrompt')
 	EndDeliverPrompt = PromptRegisterBegin()
 	PromptSetControlAction(EndDeliverPrompt, 0xD9D0E1C0)
 	str = CreateVarString(10, 'LITERAL_STRING', str)
@@ -137,7 +137,7 @@ Citizen.CreateThread( function()
 			local b2 = #(coords.xy - activeJob.endPoint.xy)
 			if b2 <= 10 then
 				sleep = false
-				local label = CreateVarString(10, 'LITERAL_STRING', 'Place of delivery reached on time')
+				local label = CreateVarString(10, 'LITERAL_STRING', _U('intime'))
             	PromptSetActiveGroupThisFrame(PromptGroupEndDelivery, label)
 				if PromptHasStandardModeCompleted(EndDeliverPrompt) then
 					if IsPedInAnyVehicle(playerPed, false) then
