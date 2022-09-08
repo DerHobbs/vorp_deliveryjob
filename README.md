@@ -8,7 +8,7 @@
 
 - Clone this repository
 - Extract the zip
-- Put vorp_DeliveryJob to your resource folder
+- Put vorp_deliveryjob to your resource folder
 - Add ```ensure vorp_DeliveryJob``` in your server.cfg
 - You can change the language in ```en.lua```
 
