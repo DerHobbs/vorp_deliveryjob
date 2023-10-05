@@ -9,4 +9,5 @@ Locales['en'] = {
     ['DeliverPrompt'] = 'Start delivery job',
     ['EndDeliverPrompt'] = 'Deliver Delivery',
     ['intime'] = 'Place of delivery reached on time',
+    ['job_ended'] = 'Your delivery job end'
 }
