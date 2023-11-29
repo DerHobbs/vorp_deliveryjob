@@ -125,6 +125,31 @@ Citizen.CreateThread( function()
 	end
 end)
 
+-- Your active end's function.
+function EndJob()
+    if inDelivery and activeJob then
+        inDelivery = false
+        RemoveBlip(deliveryPoint)
+        deliveryPoint = nil
+        deletewagon()
+        SetGpsMultiRouteRender(false)
+        TriggerServerEvent('vorp_DeliveryJob:server:endJob', activeJob.stationName)
+        activeJob = nil
+        DoScreenFadeIn(2000)
+        TriggerEvent("vorp:TipBottom", _U('job_ended'), 4000)
+    else
+        TriggerEvent("vorp:TipBottom", _U('no_active_job'), 4000)
+    end
+end
+
+-- Create a command handler for the "endjob" command.
+RegisterCommand("endjob", function()
+    EndJob()
+end, false)
+
+-- Optionally, add a chat suggestion for the "endjob" command.
+TriggerEvent('chat:addSuggestion', '/endjob', 'End your deliveryjob', {})
+
 ---job finish
 Citizen.CreateThread( function()
 	SetupEndDeliverPrompt()
